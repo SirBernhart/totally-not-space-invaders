@@ -225,7 +225,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 0.5
+  orthographic size: 0.75
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -375,7 +375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1048089938958976602, guid: a94cf6f26be4c50bb9347c8683a40e89, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.414
+      value: -0.65
       objectReference: {fileID: 0}
     - target: {fileID: 1048089938958976602, guid: a94cf6f26be4c50bb9347c8683a40e89, type: 3}
       propertyPath: m_LocalPosition.z
@@ -412,6 +412,10 @@ PrefabInstance:
     - target: {fileID: 3120809671842801694, guid: a94cf6f26be4c50bb9347c8683a40e89, type: 3}
       propertyPath: m_Name
       value: PlayerShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584113010347244663, guid: a94cf6f26be4c50bb9347c8683a40e89, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7734657141177142207, guid: a94cf6f26be4c50bb9347c8683a40e89, type: 3}
       propertyPath: _speed
