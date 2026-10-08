@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerShipMovementController
   _rigidbody: {fileID: 712360427480551479}
   _speed: 2
-  _playerHorizontalMoveLimit: 0.8
+  _screenLimitOffset: 0.1
 --- !u!114 &3951113802036424333
 MonoBehaviour:
   m_ObjectHideFlags: 0
