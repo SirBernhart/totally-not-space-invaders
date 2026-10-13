@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3089165430904929493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7995111225316552936}
+  - component: {fileID: 9071534666006354846}
+  m_Layer: 0
+  m_Name: ShootingController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7995111225316552936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3089165430904929493}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.0501, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3564654329839985376}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9071534666006354846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3089165430904929493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28a91a0dd1e112e609799fa9ba1c1c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlienShootingController
+  shotInterval: 5
+  chanceToShoot: 25
+  projectileControllerPrefabs:
+  - {fileID: 2897369126261823399, guid: 5f6bf582c8d00eabaae29e4b446c8566, type: 3}
+  - {fileID: 2897369126261823399, guid: 87566ac9c98cd41aa9c459480c53453c, type: 3}
+--- !u!1001 &7962601750572726323
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5291662732689443283, guid: d20240d845c7b83688e9b37d90842047, type: 3}
+      propertyPath: m_Name
+      value: AlienShooter
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915534654139390675, guid: d20240d845c7b83688e9b37d90842047, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915534654139390675, guid: d20240d845c7b83688e9b37d90842047, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915534654139390675, guid: d20240d845c7b83688e9b37d90842047, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915534654139390675, guid: d20240d845c7b83688e9b37d90842047, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915534654139390675, guid: d20240d845c7b83688e9b37d90842047, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915534654139390675, guid: d20240d845c7b83688e9b37d90842047, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915534654139390675, guid: d20240d845c7b83688e9b37d90842047, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915534654139390675, guid: d20240d845c7b83688e9b37d90842047, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915534654139390675, guid: d20240d845c7b83688e9b37d90842047, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915534654139390675, guid: d20240d845c7b83688e9b37d90842047, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6915534654139390675, guid: d20240d845c7b83688e9b37d90842047, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7995111225316552936}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d20240d845c7b83688e9b37d90842047, type: 3}
+--- !u!4 &3564654329839985376 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6915534654139390675, guid: d20240d845c7b83688e9b37d90842047, type: 3}
+  m_PrefabInstance: {fileID: 7962601750572726323}
+  m_PrefabAsset: {fileID: 0}
