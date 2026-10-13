@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5291662732689443283, guid: d20240d845c7b83688e9b37d90842047, type: 3}
       propertyPath: m_Name
-      value: BaseAlien
+      value: Alien1
       objectReference: {fileID: 0}
     - target: {fileID: 6915534654139390675, guid: d20240d845c7b83688e9b37d90842047, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7496982104116647972, guid: d20240d845c7b83688e9b37d90842047, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2788568348960109317, guid: 38a48ac64cc934c5599f6af771049742, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
