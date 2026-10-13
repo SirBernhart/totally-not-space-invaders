@@ -1,13 +1,11 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInputController : MonoBehaviour
 {
-    [SerializeField] private InputActionAsset _actionAsset;
-    [SerializeField] private ShootingController _shootingController;
-    [SerializeField] private PlayerShipMovementController _movementController;
-    
+    [SerializeField] private InputActionAsset actionAsset;
+    [SerializeField] private PlayerShootingController shootingController;
+    [SerializeField] private PlayerShipMovementController movementController;
     
     private InputAction _moveAction;
     private InputAction _shootAction;
@@ -15,7 +13,7 @@ public class PlayerInputController : MonoBehaviour
 
     private void Awake()
     {
-        InputActionMap map = _actionAsset.FindActionMap("Player");
+        InputActionMap map = actionAsset.FindActionMap("Player");
         _moveAction = map.FindAction("Move");
         _shootAction = map.FindAction("Attack");
 
@@ -24,7 +22,7 @@ public class PlayerInputController : MonoBehaviour
 
     private void HandleShootActionPerformed(InputAction.CallbackContext obj)
     {
-        _shootingController.Shoot();
+        shootingController.Shoot();
     }
 
     private void Update()
@@ -34,6 +32,6 @@ public class PlayerInputController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _movementController.Move(_previousMoveDirection);
+        movementController.Move(_previousMoveDirection);
     }
 }

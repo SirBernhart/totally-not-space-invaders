@@ -3,27 +3,27 @@ using UnityEngine;
 
 public class PlayerShipMovementController : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D _rigidbody;
-    [SerializeField] private float _speed;
-    [SerializeField] private float _screenLimitOffset;
+    [SerializeField] private Rigidbody2D rigidbody;
+    [SerializeField] private float speed;
+    [SerializeField] private float screenLimitOffset;
     
     private float _playerHorizontalMoveLimit;
     
     private void Awake()
     {
         Camera mainCamera = Camera.main;
-        _playerHorizontalMoveLimit = mainCamera.orthographicSize *  mainCamera.aspect - _screenLimitOffset;
+        _playerHorizontalMoveLimit = mainCamera.orthographicSize *  mainCamera.aspect - screenLimitOffset;
     }
 
     public void Move (Vector2 direction)
     {
-        if (_rigidbody.position.x >= _playerHorizontalMoveLimit && direction.x > 0
-            || _rigidbody.position.x <= -_playerHorizontalMoveLimit && direction.x < 0)
+        if (rigidbody.position.x >= _playerHorizontalMoveLimit && direction.x > 0
+            || rigidbody.position.x <= -_playerHorizontalMoveLimit && direction.x < 0)
         {
-            _rigidbody.linearVelocity = Vector2.zero;
+            rigidbody.linearVelocity = Vector2.zero;
             return;
         }
         
-        _rigidbody.linearVelocity = direction * _speed;
+        rigidbody.linearVelocity = direction * speed;
     }
 }
