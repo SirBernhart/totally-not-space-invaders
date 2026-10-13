@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6455689955228335534}
   - component: {fileID: 5075044376581603701}
   - component: {fileID: 7896551363945119265}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 3993741669883183184}
   - component: {fileID: 6621590901462709356}
   - component: {fileID: 160076902688111289}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BaseShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efbc71b3c777efadba67b3dff455b001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileController
-  _rigidbody: {fileID: 6621590901462709356}
+  rigidbody: {fileID: 6621590901462709356}
+  speed: 0
+  direction: {x: 0, y: 0}
 --- !u!50 &6621590901462709356
 Rigidbody2D:
   serializedVersion: 5
@@ -206,7 +208,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

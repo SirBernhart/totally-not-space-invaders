@@ -101,6 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1048089938958976602}
+  - component: {fileID: 3907728991729986939}
   - component: {fileID: 7734657141177142207}
   - component: {fileID: 3951113802036424333}
   - component: {fileID: 712360427480551479}
@@ -129,6 +130,20 @@ Transform:
   - {fileID: 490519591375921892}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3907728991729986939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3120809671842801694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 277bccee05c8aff628f58538142ecb8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthController
+  maxHealth: 1
+  deathVFX: {fileID: 0}
 --- !u!114 &7734657141177142207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,9 +156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5d6f9ac3df2f813aa58b10bb342ed29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerShipMovementController
-  _rigidbody: {fileID: 712360427480551479}
-  _speed: 2
-  _screenLimitOffset: 0.1
+  rigidbody: {fileID: 712360427480551479}
+  speed: 1
+  screenLimitOffset: 0.1
 --- !u!114 &3951113802036424333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,9 +171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e147f061c23ffe3a0d58b6ad83a6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputController
-  _actionAsset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  _shootingController: {fileID: 6983576987542785065}
-  _movementController: {fileID: 7734657141177142207}
+  actionAsset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  shootingController: {fileID: 348460651680061101}
+  movementController: {fileID: 7734657141177142207}
 --- !u!50 &712360427480551479
 Rigidbody2D:
   serializedVersion: 5
@@ -241,7 +256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 490519591375921892}
-  - component: {fileID: 6983576987542785065}
+  - component: {fileID: 348460651680061101}
   m_Layer: 6
   m_Name: ShootingController
   m_TagString: Untagged
@@ -264,7 +279,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1048089938958976602}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6983576987542785065
+--- !u!114 &348460651680061101
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -273,11 +288,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6990305499011900745}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d6d146046b9d9b76a98574d8d19b3bd, type: 3}
+  m_Script: {fileID: 11500000, guid: de038cea031071a0eb82fbfcb20dc448, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ShootingController
-  _shotSpeed: 3
-  _shotInterval: 0
-  _onlyAllowOneActiveShot: 1
-  _projectileControllerPrefab: {fileID: 8745806717258025066, guid: 44abfc271807fe45db6d0a6bcf6817bc, type: 3}
-  _shotDirection: {x: 0, y: 1}
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerShootingController
+  projectileControllerPrefab: {fileID: 8745806717258025066, guid: 44abfc271807fe45db6d0a6bcf6817bc, type: 3}
