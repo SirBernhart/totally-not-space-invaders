@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 
 public class HealthController : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
     [SerializeField] private GameObject deathVFX;
+    
+    public event Action<int> OnHealthChange;
     
     private int _currentHealth;
 
@@ -15,6 +18,8 @@ public class HealthController : MonoBehaviour
     public void ReduceHealth(int amount)
     {
         _currentHealth -= amount;
+        
+        OnHealthChange?.Invoke(_currentHealth);
 
         if (_currentHealth <= 0)
         {
