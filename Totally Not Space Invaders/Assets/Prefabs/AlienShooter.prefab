@@ -57,6 +57,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3502180806618199288, guid: d20240d845c7b83688e9b37d90842047, type: 3}
+      propertyPath: scoreToGive
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5291662732689443283, guid: d20240d845c7b83688e9b37d90842047, type: 3}
       propertyPath: m_Name
       value: AlienShooter
