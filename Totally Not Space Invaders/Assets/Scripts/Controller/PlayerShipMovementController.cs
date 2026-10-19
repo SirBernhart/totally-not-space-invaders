@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class PlayerShipMovementController : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rigidbody;
     [SerializeField] private float speed;
     [SerializeField] private float screenLimitOffset;
     
@@ -17,13 +16,12 @@ public class PlayerShipMovementController : MonoBehaviour
 
     public void Move (Vector2 direction)
     {
-        if (rigidbody.position.x >= _playerHorizontalMoveLimit && direction.x > 0
-            || rigidbody.position.x <= -_playerHorizontalMoveLimit && direction.x < 0)
+        if (transform.position.x >= _playerHorizontalMoveLimit && direction.x > 0
+            || transform.position.x <= -_playerHorizontalMoveLimit && direction.x < 0)
         {
-            rigidbody.linearVelocity = Vector2.zero;
             return;
         }
         
-        rigidbody.linearVelocity = direction * speed;
+        transform.Translate(speed * Time.deltaTime * direction);
     }
 }

@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rigidbody;
     [SerializeField] private float speed;
     [SerializeField] private Vector2 direction;
     
@@ -13,7 +12,6 @@ public class ProjectileController : MonoBehaviour
     private void Awake()
     {
         _screenHeight = Camera.main.orthographicSize;
-        rigidbody.linearVelocity = direction.normalized * speed;
     }
 
     public void Setup(Action onDestroyedCallback = null)
@@ -21,19 +19,20 @@ public class ProjectileController : MonoBehaviour
         OnDestroyed += onDestroyedCallback;
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        other.transform.GetComponent<HealthController>().ReduceHealth(1);
         Destroy(gameObject);
     }
 
     private void Update()
     {
-        if (rigidbody.position.y >= _screenHeight ||
-            rigidbody.position.y <= -_screenHeight)
+        if (transform.position.y >= _screenHeight ||
+            transform.position.y <= -_screenHeight)
         {
             Destroy(gameObject);
         }
+        
+        transform.Translate(speed * Time.deltaTime * direction);
     }
 
     private void OnDestroy()
