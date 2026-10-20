@@ -8,7 +8,7 @@ public class ScoreView : MonoBehaviour
     private void Awake()
     {
         ScoreController.Instance.OnScoreChange += UpdateScore;
-        scoreText.text = "0";
+        scoreText.text = ScoreController.Instance.CurrentScore.ToString();
     }
 
     private void UpdateScore(int score)
