@@ -13,8 +13,8 @@ public class AlienScoreController : MonoBehaviour
     private void HandleOnHealthChange(int amount)
     {
         if (amount <= 0)
-        {
-              ScoreController.Instance.IncreaseScore(scoreToGive);
+        { 
+            ScoreController.Instance.IncreaseScore(scoreToGive);
         }
     }
 }

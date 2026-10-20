@@ -10,19 +10,19 @@ public class AlienMovementController : MonoBehaviour
     [SerializeField] private float minAllowedMovementInterval;
     [SerializeField] private float screenLimitOffset;
 
-    private List<Transform> _allAliens;
+    private List<Alien> _allAliens;
     private float _currentMovementInterval;
     private float _movementTimer;
     private Vector2 _currentMoveVector = Vector2.right;
     
-    private float _playerHorizontalMoveLimit;
+    private float _alienHorizontalMoveLimit;
 
-    public void Setup(List<Transform> aliens)
+    public void Setup(List<Alien> aliens)
     {
         _allAliens = aliens;
         
         Camera mainCamera = Camera.main;
-        _playerHorizontalMoveLimit = mainCamera.orthographicSize *  mainCamera.aspect - screenLimitOffset;
+        _alienHorizontalMoveLimit = mainCamera.orthographicSize *  mainCamera.aspect - screenLimitOffset;
         _currentMoveVector *= movementDistance;
         _currentMovementInterval = baseMovementInterval;
     }
@@ -58,16 +58,15 @@ public class AlienMovementController : MonoBehaviour
     {
         for(int i = 0; i < _allAliens.Count; i++)
         {
-            Transform alienTransform = _allAliens[i];
-            if (alienTransform == null)
+            Alien alien = _allAliens[i];
+            if (alien == null)
             {
                 _allAliens.RemoveAt(i);
                 i--;
                 continue;
             }
             
-            if (alienTransform.position.x >= _playerHorizontalMoveLimit && _currentMoveVector.x > 0
-                || alienTransform.position.x <= -_playerHorizontalMoveLimit && _currentMoveVector.x < 0)
+            if (!alien.CanMoveInDirection(_alienHorizontalMoveLimit, _currentMoveVector))
             {
                 return false;
             }
