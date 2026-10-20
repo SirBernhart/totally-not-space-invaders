@@ -10,9 +10,9 @@ public class ScoreController
             return _instance;
         }
     }
-
     private static ScoreController _instance;
     
+    public int CurrentScore => _currentScore;
     public event Action<int> OnScoreChange;
     
     private int _currentScore;
@@ -21,5 +21,10 @@ public class ScoreController
     {
         _currentScore += amount;
         OnScoreChange?.Invoke(_currentScore);
+    }
+
+    public void ResetController()
+    {
+        _instance = new ScoreController();
     }
 }
