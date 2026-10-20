@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -33,5 +34,10 @@ public class PlayerInputController : MonoBehaviour
     private void FixedUpdate()
     {
         movementController.Move(_previousMoveDirection);
+    }
+
+    private void OnDestroy()
+    {
+        _shootAction.performed -= HandleShootActionPerformed;
     }
 }
