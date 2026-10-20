@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6915534654139390675}
   - component: {fileID: 8209467536256187261}
-  - component: {fileID: 5695264332175948500}
+  - component: {fileID: 8292826581407657464}
   - component: {fileID: 3502180806618199288}
   - component: {fileID: 5764776385706369468}
   m_Layer: 7
@@ -50,7 +50,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HealthController
   maxHealth: 1
   deathVFX: {fileID: 0}
---- !u!114 &5695264332175948500
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8292826581407657464
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59,9 +62,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5291662732689443283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d87f1f5e4245a3ce88b731a59584e9cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 53ce815d1ff1ea7ef964c7edea0bb68c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DamageableEntity
+  m_EditorClassIdentifier: Assembly-CSharp::Alien
   healthController: {fileID: 8209467536256187261}
 --- !u!114 &3502180806618199288
 MonoBehaviour:
