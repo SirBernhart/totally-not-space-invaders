@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HealthController : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class HealthController : MonoBehaviour
     [SerializeField] private GameObject deathVFX;
     
     public event Action<int> OnHealthChange;
+    public UnityEvent OnDeath;
     
     private int _currentHealth;
 
@@ -23,13 +25,7 @@ public class HealthController : MonoBehaviour
 
         if (_currentHealth <= 0)
         {
-            Die();
+            OnDeath?.Invoke();
         }
-    }
-
-    private void Die()
-    {
-        //Instantiate(deathVFX, transform.position, transform.rotation);
-        Destroy(gameObject);
     }
 }
